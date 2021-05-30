@@ -1,5 +1,3 @@
-# sql
-sql study
+# praticce sql
 
-
-sql 
+study sql
