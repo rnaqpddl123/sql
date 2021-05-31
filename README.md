@@ -1,3 +1,4 @@
 # praticce sql
 
-study sql
+<details>
+      <summary>study sql<summary>
