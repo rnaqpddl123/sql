@@ -1,0 +1,120 @@
+1. hr 계정 사용 필수
+
+2. hr 계정에서 제공해주는 table 기반으로 자기주도 문제 5개를 제시
+select * from tab;
+TNAME			       TABTYPE	CLUSTERID
+------------------------------ ------- ----------
+COUNTRIES		       TABLE
+DEPARTMENTS		       TABLE
+EMPLOYEES		       TABLE
+EMP_DETAILS_VIEW	   VIEW
+JOBS			       TABLE
+JOB_HISTORY		       TABLE
+LOCATIONS		       TABLE
+REGIONS 		       TABLE
+
+
+
+select * from employees;
+
+
+-- 부서 80, 월급 반올림해서 1만넘는 사람들 의 employee_id, job_id, salary
+select employee_id, job_id, salary, department_id from employees where department_id = '80' and round(salary)>10000;
+
+최대금액은 manager가 받았다. 
+
+
+job_id의 뒷글자가 account(대문자)인 사람들의 샐러리와 이름을 내림차순
+select first_name, job_id, salary from employees where substr(job_id, 4, 7) = upper('account') order by salary desc;
+select first_name, job_id, salary, decode(salary, '9000', 'high'),hire_date from employees where substr(job_id, 4, 7) = 'ACCOUNT' order by salary desc;
+select first_name, job_id, salary, decode(salary, , 'fired'),hire_date from employees where substr(job_id, 4, 7) = 'ACCOUNT' order by salary desc;
+
+
+-----------------
+select phone_number, hire_date
+  2  from employees
+  3  where first_name like '_l%';
+
+PHONE_NUMBER                             HIRE_DAT
+---------------------------------------- --------
+590.423.4567                             06/01/03
+515.127.4562                             03/05/18
+011.44.1344.429278                       05/03/10
+011.44.1344.429018                       08/01/29
+011.44.1344.486508                       07/11/23
+011.44.1345.829268                       04/08/01
+011.44.1346.129268                       05/11/11
+011.44.1343.529268                       07/03/24
+011.44.1644.429267                       04/05/11
+011.44.1644.429266                       05/03/19
+650.509.2876                             05/02/20
+650.507.9811                             06/04/24
+
+
+2. 핸드폰번호가 011로 시작하는 사원들의 급여와 job_id를 출력하시오.
+
+select salary, job_id
+  2  from employees
+  3  where substr(phone_number,1,3) = '011';
+
+    SALARY JOB_ID
+---------- --------------------
+     14000 SA_MAN
+     13500 SA_MAN
+     12000 SA_MAN
+     11000 SA_MAN
+     10500 SA_MAN
+     10000 SA_REP
+      9500 SA_REP
+      9000 SA_REP
+      8000 SA_REP
+      7500 SA_REP
+      7000 SA_REP
+     10000 SA_REP
+      9500 SA_REP
+      9000 SA_REP
+      8000 SA_REP
+      7500 SA_REP
+      7000 SA_REP
+     10500 SA_REP
+      9500 SA_REP
+      7200 SA_REP
+      6800 SA_REP
+      6400 SA_REP
+      6200 SA_REP
+     11500 SA_REP
+     10000 SA_REP
+      9600 SA_REP
+      7400 SA_REP
+      7300 SA_REP
+      6100 SA_REP
+     11000 SA_REP
+      8800 SA_REP
+      8600 SA_REP
+      8400 SA_REP
+      7000 SA_REP
+      6200 SA_REP
+
+--select salary, job_id from employees where phone_number like '011%';
+--위와 같은결과나옴(정주영)
+
+-- decode는 동등비교만 가능하다.
+-- 
+
+3. 모범답안도 도출
+
+4. 1~3단계 학습된 내용까지를 기준으로 문제 제시
+    1. review
+    2. 문제 제출
+    3. 퀄리티 고려
+
+5. github 업로드하면서 github 사용 연습 시작.
+    
+6. 작업인원
+    - 2~3인
+    - 2인 : 5문제
+    - 3인 : 6문제
+
+-
+7. 다른 팀이 문제 검증 -> 검증시 이견의 타당성 반영하기(github에서 하기 commit 횟수 고려)
+
