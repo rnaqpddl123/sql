@@ -4,7 +4,7 @@ import collections
 
 
 def empall():
-    conn = pymysql.connect(host='database-2.c91cjg0xhc1w.ap-northeast-2.rds.amazonaws.com',
+    conn = pymysql.connect(host='????',
                             user='admin',
                             password='playdata',
                             db='playdata',
@@ -23,7 +23,7 @@ def empall():
 def empall2():
     all = []
     try:
-        conn = pymysql.connect(host='database-2.c91cjg0xhc1w.ap-northeast-2.rds.amazonaws.com',
+        conn = pymysql.connect(host='?????',
                         user='admin',
                         password='playdata',
                         db='playdata',
