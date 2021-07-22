@@ -23,7 +23,7 @@ def empall():
 def empall2():
     all = []
     try:
-        conn = pymysql.connect(host='?????????',
+        conn = pymysql.connect(host='database-2.c91cjg0xhc1w.ap-northeast-2.rds.amazonaws.com',
                         user='admin',
                         password='playdata',
                         db='playdata',
